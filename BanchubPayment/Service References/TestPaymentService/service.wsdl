@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/BancHub" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBancHUBPaymentService_Authorize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authorize" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_Authorize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthorizeKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeKey" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthorizeKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardToken" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CardTokenPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CardTokenPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CardTokenPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CardTokenPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CaptureCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CaptureCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CaptureCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CaptureCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchAccountPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AchAccountPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchAccountPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AchAccountPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBankAccountToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountToken" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBankAccountToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankAccountTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchTokenAccountPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AchTokenAccountPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchTokenAccountPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AchTokenAccountPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchCheckPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AchCheckPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchCheckPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AchCheckPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchInternationalPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AchInternationalPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchInternationalPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AchInternationalPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentCurrentStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentCurrentStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentCurrentStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentCurrentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentRefund_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRefund" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentRefund_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentRefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentCancel_InputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentCancel" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_PaymentCancel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PaymentCancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_ValidateCardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_ValidateCardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBankName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankName" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBankName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardType" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetTransactionDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetTransactionDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaAccountPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepaAccountPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaAccountPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepaAccountPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaCheckPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepaCheckPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaCheckPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepaCheckPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaAccountExchangePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepaAccountExchangePayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaAccountExchangePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepaAccountExchangePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaCheckExchangePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SepaCheckExchangePayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SepaCheckExchangePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SepaCheckExchangePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SEPAPaymentReversal_InputMessage">
+    <wsdl:part name="parameters" element="tns:SEPAPaymentReversal" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SEPAPaymentReversal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SEPAPaymentReversalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SEPAPaymentCancellation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SEPAPaymentCancellation" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SEPAPaymentCancellation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SEPAPaymentCancellationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_BacsPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:BacsPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_BacsPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BacsPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserDeviceMask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserDeviceMask" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserDeviceMask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserDeviceMaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserDeliveryType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserDeliveryType" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserDeliveryType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserDeliveryTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserMfa_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserMfa" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AuthenticateUserMfa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserMfaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccount" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentity" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategoriesId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesId" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategoriesId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetInstitutionsId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstitutionsId" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetInstitutionsId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstitutionsIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetInstitutions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstitutions" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetInstitutions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstitutionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncome" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpgradeUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpgradeUser" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpgradeUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpgradeUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CreateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCard" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_CreateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpdateCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCard" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_UpdateCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_DeleteCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCard" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_DeleteCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCardLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCardLink" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCardLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCardLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCardAllowance_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCardAllowance" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCardAllowance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCardAllowanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardAccount" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCardAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetAccountStatement_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountStatement" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetAccountStatement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountStatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetLinkStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkStatus" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetLinkStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinkStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetPaymentPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPaymentPlan" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetPaymentPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPaymentPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetMasterDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDetails" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_GetMasterDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_SetMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchCanAccountPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AchCanAccountPayment" />
+  </wsdl:message>
+  <wsdl:message name="IBancHUBPaymentService_AchCanAccountPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AchCanAccountPaymentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBancHUBPaymentService">
+    <wsdl:operation name="Authorize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/Authorize" message="tns:IBancHUBPaymentService_Authorize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthorizeResponse" message="tns:IBancHUBPaymentService_Authorize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthorizeKey" message="tns:IBancHUBPaymentService_AuthorizeKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthorizeKeyResponse" message="tns:IBancHUBPaymentService_AuthorizeKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CardPayment" message="tns:IBancHUBPaymentService_CardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CardPaymentResponse" message="tns:IBancHUBPaymentService_CardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardToken" message="tns:IBancHUBPaymentService_GetCardToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardTokenResponse" message="tns:IBancHUBPaymentService_GetCardToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CardTokenPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CardTokenPayment" message="tns:IBancHUBPaymentService_CardTokenPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CardTokenPaymentResponse" message="tns:IBancHUBPaymentService_CardTokenPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CaptureCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CaptureCardPayment" message="tns:IBancHUBPaymentService_CaptureCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CaptureCardPaymentResponse" message="tns:IBancHUBPaymentService_CaptureCardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AchAccountPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchAccountPayment" message="tns:IBancHUBPaymentService_AchAccountPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchAccountPaymentResponse" message="tns:IBancHUBPaymentService_AchAccountPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBankAccountToken" message="tns:IBancHUBPaymentService_GetBankAccountToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBankAccountTokenResponse" message="tns:IBancHUBPaymentService_GetBankAccountToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AchTokenAccountPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchTokenAccountPayment" message="tns:IBancHUBPaymentService_AchTokenAccountPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchTokenAccountPaymentResponse" message="tns:IBancHUBPaymentService_AchTokenAccountPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AchCheckPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchCheckPayment" message="tns:IBancHUBPaymentService_AchCheckPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchCheckPaymentResponse" message="tns:IBancHUBPaymentService_AchCheckPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AchInternationalPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchInternationalPayment" message="tns:IBancHUBPaymentService_AchInternationalPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchInternationalPaymentResponse" message="tns:IBancHUBPaymentService_AchInternationalPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCurrentStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentCurrentStatus" message="tns:IBancHUBPaymentService_PaymentCurrentStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentCurrentStatusResponse" message="tns:IBancHUBPaymentService_PaymentCurrentStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRefund">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentRefund" message="tns:IBancHUBPaymentService_PaymentRefund_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentRefundResponse" message="tns:IBancHUBPaymentService_PaymentRefund_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCancel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentCancel" message="tns:IBancHUBPaymentService_PaymentCancel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/PaymentCancelResponse" message="tns:IBancHUBPaymentService_PaymentCancel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/ValidateCardDetails" message="tns:IBancHUBPaymentService_ValidateCardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/ValidateCardDetailsResponse" message="tns:IBancHUBPaymentService_ValidateCardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBankName" message="tns:IBancHUBPaymentService_GetBankName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBankNameResponse" message="tns:IBancHUBPaymentService_GetBankName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardType" message="tns:IBancHUBPaymentService_GetCardType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardTypeResponse" message="tns:IBancHUBPaymentService_GetCardType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetTransactionDetails" message="tns:IBancHUBPaymentService_GetTransactionDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetTransactionDetailsResponse" message="tns:IBancHUBPaymentService_GetTransactionDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepaAccountPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaAccountPayment" message="tns:IBancHUBPaymentService_SepaAccountPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaAccountPaymentResponse" message="tns:IBancHUBPaymentService_SepaAccountPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepaCheckPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaCheckPayment" message="tns:IBancHUBPaymentService_SepaCheckPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaCheckPaymentResponse" message="tns:IBancHUBPaymentService_SepaCheckPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepaAccountExchangePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaAccountExchangePayment" message="tns:IBancHUBPaymentService_SepaAccountExchangePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaAccountExchangePaymentResponse" message="tns:IBancHUBPaymentService_SepaAccountExchangePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SepaCheckExchangePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaCheckExchangePayment" message="tns:IBancHUBPaymentService_SepaCheckExchangePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SepaCheckExchangePaymentResponse" message="tns:IBancHUBPaymentService_SepaCheckExchangePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SEPAPaymentReversal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentReversal" message="tns:IBancHUBPaymentService_SEPAPaymentReversal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentReversalResponse" message="tns:IBancHUBPaymentService_SEPAPaymentReversal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SEPAPaymentCancellation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentCancellation" message="tns:IBancHUBPaymentService_SEPAPaymentCancellation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentCancellationResponse" message="tns:IBancHUBPaymentService_SEPAPaymentCancellation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BacsPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/BacsPayment" message="tns:IBancHUBPaymentService_BacsPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/BacsPaymentResponse" message="tns:IBancHUBPaymentService_BacsPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AddUser" message="tns:IBancHUBPaymentService_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AddUserResponse" message="tns:IBancHUBPaymentService_AddUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserDeviceMask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeviceMask" message="tns:IBancHUBPaymentService_AuthenticateUserDeviceMask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeviceMaskResponse" message="tns:IBancHUBPaymentService_AuthenticateUserDeviceMask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserDeliveryType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeliveryType" message="tns:IBancHUBPaymentService_AuthenticateUserDeliveryType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeliveryTypeResponse" message="tns:IBancHUBPaymentService_AuthenticateUserDeliveryType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserMfa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserMfa" message="tns:IBancHUBPaymentService_AuthenticateUserMfa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserMfaResponse" message="tns:IBancHUBPaymentService_AuthenticateUserMfa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/DeleteUser" message="tns:IBancHUBPaymentService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/DeleteUserResponse" message="tns:IBancHUBPaymentService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBalance" message="tns:IBancHUBPaymentService_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetBalanceResponse" message="tns:IBancHUBPaymentService_GetBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetAccount" message="tns:IBancHUBPaymentService_GetAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetAccountResponse" message="tns:IBancHUBPaymentService_GetAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetIdentity" message="tns:IBancHUBPaymentService_GetIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetIdentityResponse" message="tns:IBancHUBPaymentService_GetIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategories" message="tns:IBancHUBPaymentService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategoriesResponse" message="tns:IBancHUBPaymentService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategoriesId" message="tns:IBancHUBPaymentService_GetCategoriesId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategoriesIdResponse" message="tns:IBancHUBPaymentService_GetCategoriesId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstitutionsId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetInstitutionsId" message="tns:IBancHUBPaymentService_GetInstitutionsId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetInstitutionsIdResponse" message="tns:IBancHUBPaymentService_GetInstitutionsId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstitutions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetInstitutions" message="tns:IBancHUBPaymentService_GetInstitutions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetInstitutionsResponse" message="tns:IBancHUBPaymentService_GetInstitutions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetTransactions" message="tns:IBancHUBPaymentService_GetTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetTransactionsResponse" message="tns:IBancHUBPaymentService_GetTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetIncome" message="tns:IBancHUBPaymentService_GetIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetIncomeResponse" message="tns:IBancHUBPaymentService_GetIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpdateUser" message="tns:IBancHUBPaymentService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpdateUserResponse" message="tns:IBancHUBPaymentService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpgradeUser" message="tns:IBancHUBPaymentService_UpgradeUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpgradeUserResponse" message="tns:IBancHUBPaymentService_UpgradeUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CreateCard" message="tns:IBancHUBPaymentService_CreateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/CreateCardResponse" message="tns:IBancHUBPaymentService_CreateCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpdateCard" message="tns:IBancHUBPaymentService_UpdateCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/UpdateCardResponse" message="tns:IBancHUBPaymentService_UpdateCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/DeleteCard" message="tns:IBancHUBPaymentService_DeleteCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/DeleteCardResponse" message="tns:IBancHUBPaymentService_DeleteCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardTransaction" message="tns:IBancHUBPaymentService_GetCardTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardTransactionResponse" message="tns:IBancHUBPaymentService_GetCardTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardDetails" message="tns:IBancHUBPaymentService_GetCardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardDetailsResponse" message="tns:IBancHUBPaymentService_GetCardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCardLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCardLink" message="tns:IBancHUBPaymentService_SetCardLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCardLinkResponse" message="tns:IBancHUBPaymentService_SetCardLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCardAllowance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCardAllowance" message="tns:IBancHUBPaymentService_SetCardAllowance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCardAllowanceResponse" message="tns:IBancHUBPaymentService_SetCardAllowance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetDepartment" message="tns:IBancHUBPaymentService_SetDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetDepartmentResponse" message="tns:IBancHUBPaymentService_SetDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCategory" message="tns:IBancHUBPaymentService_SetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetCategoryResponse" message="tns:IBancHUBPaymentService_SetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardAccount" message="tns:IBancHUBPaymentService_GetCardAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCardAccountResponse" message="tns:IBancHUBPaymentService_GetCardAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetAccountStatement" message="tns:IBancHUBPaymentService_GetAccountStatement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetAccountStatementResponse" message="tns:IBancHUBPaymentService_GetAccountStatement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetDepartment" message="tns:IBancHUBPaymentService_GetDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetDepartmentResponse" message="tns:IBancHUBPaymentService_GetDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategory" message="tns:IBancHUBPaymentService_GetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetCategoryResponse" message="tns:IBancHUBPaymentService_GetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetLinkStatus" message="tns:IBancHUBPaymentService_GetLinkStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetLinkStatusResponse" message="tns:IBancHUBPaymentService_GetLinkStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPaymentPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetPaymentPlan" message="tns:IBancHUBPaymentService_SetPaymentPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetPaymentPlanResponse" message="tns:IBancHUBPaymentService_SetPaymentPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetReport" message="tns:IBancHUBPaymentService_GetReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetReportResponse" message="tns:IBancHUBPaymentService_GetReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetMasterDetails" message="tns:IBancHUBPaymentService_GetMasterDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/GetMasterDetailsResponse" message="tns:IBancHUBPaymentService_GetMasterDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetMerchant" message="tns:IBancHUBPaymentService_SetMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/SetMerchantResponse" message="tns:IBancHUBPaymentService_SetMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AchCanAccountPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchCanAccountPayment" message="tns:IBancHUBPaymentService_AchCanAccountPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBancHUBPaymentService/AchCanAccountPaymentResponse" message="tns:IBancHUBPaymentService_AchCanAccountPayment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBancHUBPaymentService" type="tns:IBancHUBPaymentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorize">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/Authorize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeKey">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AuthorizeKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/CardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardToken">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCardToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CardTokenPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/CardTokenPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureCardPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/CaptureCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchAccountPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AchAccountPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankAccountToken">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetBankAccountToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchTokenAccountPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AchTokenAccountPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchCheckPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AchCheckPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchInternationalPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AchInternationalPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCurrentStatus">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/PaymentCurrentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentRefund">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/PaymentRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaymentCancel">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/PaymentCancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCardDetails">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/ValidateCardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankName">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetBankName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardType">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCardType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepaAccountPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SepaAccountPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepaCheckPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SepaCheckPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepaAccountExchangePayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SepaAccountExchangePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SepaCheckExchangePayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SepaCheckExchangePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEPAPaymentReversal">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentReversal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEPAPaymentCancellation">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SEPAPaymentCancellation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BacsPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/BacsPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserDeviceMask">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeviceMask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserDeliveryType">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserDeliveryType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUserMfa">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AuthenticateUserMfa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdentity">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesId">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCategoriesId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstitutionsId">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetInstitutionsId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstitutions">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetInstitutions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncome">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeUser">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/UpgradeUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCard">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/CreateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/UpdateCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCard">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/DeleteCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardTransaction">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardDetails">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCardLink">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetCardLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCardAllowance">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetCardAllowance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDepartment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCategory">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardAccount">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCardAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountStatement">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetAccountStatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLinkStatus">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetLinkStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPaymentPlan">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetPaymentPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterDetails">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/GetMasterDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMerchant">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/SetMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AchCanAccountPayment">
+      <soap:operation soapAction="http://tempuri.org/IBancHUBPaymentService/AchCanAccountPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IBancHUBPaymentService" binding="tns:BasicHttpBinding_IBancHUBPaymentService">
+      <soap:address location="http://10.110.53.53/Banchub2.4/service" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

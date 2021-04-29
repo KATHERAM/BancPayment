@@ -1,0 +1,49 @@
+﻿body {
+      margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+
+    html, body {
+    height:100%;
+    margin:0;
+    padding:0;
+}
+#wrapperthiyagu {
+    width:400px; /*set to desired width*/
+    height:100%;
+    margin:auto;
+    position:relative;
+}
+.content-fluid {
+    padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+#contentthiyagu {
+    position:absolute;
+    bottom:0;
+    top:40px; /*must match the height of #header*/
+    width:100%;
+    overflow:auto;
+}
+
+#footer {
+   
+  position:absolute;
+}

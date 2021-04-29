@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    @* <meta http-equiv="refresh" content="0; url=../Error/ErrorPage" />*@
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta http-equiv="Cache-Control" content="no-cache,no-cache,no-store,must-revalidate,pre-check=0,post-check=0,max-age=0,s-maxage=0" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1,0">
+    <!-- Bootstrap -->
+
+    <link href="~/CSS/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/CSS/font-awesome.min.css" rel="stylesheet" />
+    @*<link href="../Content/theme/style.css" rel="stylesheet" />*@
+    @*<link href="../Content/theme/teststyle.css" rel="stylesheet" />*@
+
+    @if (ViewBag.style != null)
+    {
+        <link href="@ViewBag.style" rel="stylesheet" />
+    }
+
+    <!-- jQuery UI -->
+    <link href="~/Content/theme/jquery-ui.min.css" rel="stylesheet" />
+    <!-- Color CSS -->
+    <link href="~/Content/theme/theme.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+
+    @*<script type="text/javascript">
+        function preventBack() {
+            alert("HI")
+            window.history.forward();
+        }
+        alert ("Hi2")
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+    </script>*@
+</head>
+
+<body style="background-color:#ECF0F1;">
+    <header class="container">
+        <div>
+            <div class="row" id="header">
+                <div class="col-md-1 col-sm-12 cols-xs-6">
+                </div>
+                <div class="col-md-10 col-sm-12 cols-xs-6">
+                    <div class="container-fluid" id="navigation">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 cols-xs-6">
+                                <a href="#" id="brand">
+                                    <div id="headerimg"></div>
+                                    @*<img class="headerimg" />*@
+                                    @*<img id="headerimg" src="@ViewBag.logo" />*@
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-sm-12 cols-xs-6">
+                                @*<div>
+                                        <label class="navbar-brand pull-right" style="width: auto; height: auto; margin: 0px auto 0px auto; text-align:center;font-size:1em">Welcome @ViewBag.UserName</label>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-12 cols-xs-6">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container" style="top:-20px;position:relative;zoom:1 !important;">
+        <div class="row">
+            <div class="col-md-1 col-sm-12 cols-xs-6"></div>
+            <div class="col-md-10 col-sm-12 cols-xs-6">
+                @RenderSection("featured", required: false)
+                @RenderBody()
+            </div>
+            <div class="col-md-1 col-sm-12 cols-xs-6">
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+
+    <script src="~/js/jquery.min.js"></script>
+    <!-- Nice Scroll -->
+    <script src="~/JS/jquery.nicescroll.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="~/JS/theme/jquery-ui.js"></script>
+    <!-- Bootstrap -->
+    @*	<script src="js/bootstrap.min.js"></script>*@
+    <script src="~/JS/bootstrap/bootstrap.min.js"></script>
+    <!-- Chosen -->
+    <script src="~/JS/theme/chosen.jquery.min.js"></script>
+    <!-- select2 -->
+    <script src="~/JS/theme/select2.min.js"></script>
+    <!-- icheck -->
+    <script src="~/JS/theme/jquery.icheck.min.js"></script>
+    <!-- Theme framework -->
+    <script src="~/JS/theme/eakroko.min.js"></script>
+    <!-- Theme scripts -->
+    <script src="~/JS/theme/application.min.js"></script>
+    <!-- Theme scripts -->
+
+    <script src="~/JS/Validation.js"></script>
+    <script src="~/JS/aes.js"></script>
+    @*<script src="~/JS/back.js"></script>*@s
+    @*<script src="~/Scripts/jquery-1.7.1.js"></script>*@
+
+
+    <script type="text/javascript">
+        history.pushState(null, null, location.href);
+        history.back(); history.forward();
+        window.onpopstate = function () { history.go(1); };
+    </script>
+
+
+
+    @*<script>
+            $(document).ready(function () {
+                alert("HI")
+                window.history.pushState(null, "", window.location.href);
+                window.onpopstate = function () {
+                    window.history.pushState(null, "", window.location.href);
+                };
+            });
+        </script>*@
+    <!--Animate themes-->
+    @*<script src="~/notify/js/app.js"></script>
+        <script src="~/notify/js/pnotify.custom.js"></script>
+        <script src="~/notify/js/pnotify.custom.min.js"></script>*@
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+﻿@model BancHubPayment.Models.ModelCollection
+@{
+    ViewBag.Title = "Payment Gateway";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.style != null)
+{
+    <link href="@ViewBag.style" rel="stylesheet" />
+}
+
+<script>
+        $(document).ready(function () {
+
+            var method = '@ViewBag.defaultmethod';
+            var options = '@ViewBag.options';
+            
+            if ((method != null && method.length > 0) || (options != null && options.length > 0)) {
+                if (options.indexOf("CC") !== -1 || method.indexOf("CC") !== -1) {
+                    if (method.indexOf("CC") !== -1 || (method.indexOf("DC") == -1 && method.indexOf("BAC") == -1)) {
+                        $('#_cc').addClass('active');
+                        $('#cc').addClass('active');
+                    }
+                } else if (options !== null && options.length > 0) {
+                    $('#_cc').remove();
+                    $('#cc').remove();
+                }
+                
+
+                if (options.indexOf("DC") !== -1 || method.indexOf("DC") !== -1) {
+                    if (method.indexOf("DC") !== -1) {
+                        $('#_dc').addClass('active');
+                        $('#dc').addClass('active');
+                    }
+                }
+                else if (options !== null && options.length > 0) {
+                    $('#_dc').remove();
+                    $('#dc').remove();
+                }
+
+                if (options.indexOf("BAC") !== -1 || method.indexOf("BAC") !== -1) {
+                    if (method.indexOf("BAC") !== -1) {
+                        $('#_bac').addClass('active');
+                        $('#achus').addClass('active');
+                    }
+                } else if (options !== null && options.length > 0) {
+                    $('#_bac').remove();
+                    $('#achus').remove();
+                }
+            }
+        });
+</script>
+
+<style type="text/css">
+    .morecontent span {
+        display: none;
+    }
+
+    .morelink {
+        display: block;
+    }
+</style>
+
+@section featured
+{
+    <div id="content">
+        <div class="box box-bordered box-color">
+            <div class="box-title">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 cols-xs-6">
+                        @if ((bool)TempData["AuthorizeOnly"] != true)
+                        {
+                            <div>
+                                <h3>
+                                    <i class="fa fa-money"></i>Make Payment
+                                </h3>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <div>
+                                <h3>
+                                    <i class="fa fa-money"></i>Authorize Account
+                                </h3>
+                            </div>
+
+                        }
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 cols-xs-6" style="margin-top: 5px;text-align:right;">
+                        <span>
+                            OrderID&nbsp;&nbsp;<label id="banchub-orderid">@ViewBag.orderId</label>
+                        </span>&nbsp;
+                    </div>
+                    @if (!((bool)TempData["AuthorizeOnly"] == true && ViewBag.Amount == 0))
+                    {
+                        <div class="col-md-3 col-sm-12 cols-xs-6" style="margin-top: 5px;text-align:right;">
+                            <span>
+                                Amount&nbsp; &nbsp;<label id="banchub-currency">@ViewBag.currency</label>&nbsp;<label id="banchub-amount">@ViewBag.amount</label>
+                            </span>&nbsp;
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="box-content nopadding">
+                <div class="tabs-container">
+                    <ul class="tabs tabs-inline tabs-left">
+                        <li id="_cc">
+                            <a href="#cc" data-toggle="tab" id="ccview">
+                                <i class="fa fa-credit-card"></i>&nbsp;Credit Card
+                            </a>
+                        </li>
+                        <li id="_dc">
+                            <a href="#dc" data-toggle="tab" id="dcview">
+                                <i class="fa fa-credit-card"></i>&nbsp;Debit Card
+                            </a>
+                        </li>
+                        <li id="_bac">
+                            <a href="#achus" data-toggle="tab" id="achview">
+                                <i class="fa fa-bank"></i>&nbsp;Account Transfer
+                            </a>
+                        </li>
+                        <li id="_ampay">
+                            <a href="#amzpayus" data-toggle="tab" id="amazonview">
+                                <i class="fa fa-bank"></i>&nbsp;Amazon pay
+                            </a>
+                        </li>
+                        @*<li class="">
+            <a href="#achcan" data-toggle="tab">
+                <i class="fa fa-bank"></i>&nbsp;Canada Account Transfer</a>
+        </li>*@
+                        @*<li class="">
+            <a href="#fourth" data-toggle="tab">
+                <i class="fa fa-gift"></i>&nbsp;Wire Transfer
+            </a>
+        </li>*@
+
+                    </ul>
+
+                </div>
+
+                <div class="tab-content padding tab-content-inline">
+                    <div class="tab-pane" id="cc" style="max-width: none">
+                        <fieldset>
+                            <legend>
+                                <h4>Enter&nbsp;credit&nbsp;card&nbsp;details</h4>
+                            </legend>
+                            <div id="creditform">
+                                @if (Model.CreditCardModel != null)
+                                {
+                                    @Html.Partial("_CreditPayment", Model.CreditCardModel)
+                                }
+                            </div>
+
+                        </fieldset>
+                    </div>
+                    <div class="tab-pane" id="dc" style="max-width: none">
+                        <fieldset>
+                            <legend>
+                                <h4>Enter&nbsp;debit&nbsp;card&nbsp;details</h4>
+                            </legend>
+                            <div id="debitform">
+                                @if (Model.DebitCardModel != null)
+                                {
+                                    @Html.Partial("_DebitPayment", Model.DebitCardModel)
+                                }
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="tab-pane" id="achus" style="max-width: none">
+                        <fieldset>
+                            <legend>
+                                <h4>Enter&nbsp;bank&nbsp;account&nbsp;details</h4>
+                            </legend>
+                            <div id="achform">
+                                @if (Model.AchModel != null)
+                                {
+                                    @Html.Partial("_AchPayment", Model.AchModel)
+                                }
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    <div class="tab-pane" id="amzpayus" style="max-width: none">
+                        <fieldset>
+                            <legend>
+                                <h4>Select your billing address and payment method from the widgets below</h4>
+                            </legend>
+                            <div id="achform">
+                                @if (Model.AchModel != null)
+                                {
+                                    @Html.Partial("_AmazonPay", Model.AchModel)
+                                }
+                            </div>
+                        </fieldset>
+
+                    </div>
+                    @*<div class="tab-pane" id="achcan" style="max-width: none">
+            <fieldset>
+                <legend>
+                    <h4>Pay&nbsp;using&nbsp;bank&nbsp;account</h4>
+                </legend>
+                <div id="achcaform">
+                    @if (Model.AchCaModel != null)
+                    {
+                        @Html.Partial("_AchCaPayment", Model.AchCaModel)
+                    }
+                </div>
+            </fieldset>
+
+        </div>*@
+                    @*<div class="tab-pane" id="fourth" style="max-width: none">
+            <fieldset>
+                <legend>
+                    <h4>Pay&nbsp;using&nbsp;wire&nbsp;transfer</h4>
+                </legend>
+                <div id="wireform">
+                    @if (Model.AchWireModel != null)
+                    {
+                        @Html.Partial("_AchWirePayment", Model.AchWireModel)
+                    }
+                </div>
+            </fieldset>
+
+        </div>*@
+                </div>
+            </div>
+            <input type="hidden" id="trace" name="trace" value="" />
+        </div>
+    </div>
+    <style type="text/css">
+        .bs-example {
+            width: 600px;
+            height: 100px;
+        }
+
+        .bs-example {
+            margin: 200px 150px 0;
+        }
+
+            .bs-example button {
+                margin: 10px;
+            }
+    </style>
+}

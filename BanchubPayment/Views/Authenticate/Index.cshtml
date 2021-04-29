@@ -1,0 +1,121 @@
+﻿@model BancHubPayment.Models.Authenticate
+@{
+    ViewBag.Title = "Authentication";
+    Layout = "~/Views/Shared/_Layoutview.cshtml";
+}
+
+    @section featured
+    {
+
+    <div id="content">
+        <div class="box box-bordered box-color">
+            @*<div class="box-title">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 cols-xs-6">
+                        <br />
+                    </div>
+                </div>
+            </div>*@
+            <div >
+                <div style="margin:20px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">                            
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                            <div style="text-align:center">
+                                @*<img src="~/images/banchub.png" />*@
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                            <div style="text-align:center">
+                                <br />
+                                Authenticating your request......
+                            </div>
+                            <div style="text-align:center" id="msg">
+                            <br />
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                            <div style="text-align:center">
+                                <br />
+                                <img src="~/images/LoadingBar.gif"/>
+                                @*<img src="~/images/fancybox_loading.gif" />*@
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>                
+            </div>
+        </div>
+    </div>
+    </div>
+    }
+
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script>
+
+        @*var auth = {
+            ClientId :"@Model.ClientId",
+            Apikey:"@Model.Apikey",
+            Currency : "@Model.Currency",
+            ReferenceId:"@Model.ReferenceId",
+            Amount:@Model.Amount,
+            Url:"@Model.Url",
+            Refund:"@Model.Refund",
+            AchType: "@Model.AchType",
+            DefaultMethod:"@Model.DefaultMethod",
+            PaymentOptions: "@Model.PaymentOptions",
+            Email: "@Model.Email",
+            Description: "@Model.Description",
+            AutoSave: "@Model.AutoSave",
+            AuthorizeOnly: "@Model.AuthorizeOnly"
+        };*@
+
+        var auth = @Html.Raw(Json.Encode(Model));
+        $(document).ready(function () {
+
+            $.ajax({
+                url: '@Url.Action("Authenticate","Authenticate")',
+                type: "post",
+                data: auth,
+                dataType: 'json',
+                success: function (result) {
+                    if(result.success==true)
+                    {
+                        //var auth = result.responseText;
+                        //window.location.href = '@Url.Action("Payment", "Process")?auth=' + JSON.stringify(auth);
+                        window.location.href='@Url.Action("Payment", "Process")';
+                    }
+                    else
+                    {
+                        window.location.replace(result.returnUrl)
+                        }
+                        },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert('ERROR:' + errorThrown);
+                        }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            window.history.pushState(null, "", window.location.href);
+            window.onpopstate = function () {
+                window.history.pushState(null, "", window.location.href);
+            };
+        });
+    </script>

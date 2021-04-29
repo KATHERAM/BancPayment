@@ -1,0 +1,20 @@
+.popupunder{
+    width: 300px;
+	position:fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 10;
+	border: 0;
+	padding: 20px;
+}
+.popupunder.alert-success{
+    border: 1px solid #198b49;
+	background:#27AE60;
+	color:#fff;
+}
+.popupunder .close{
+	font-size: 10px;
+	position:absolute !important;
+	right: 2px;
+	top: 3px;
+}

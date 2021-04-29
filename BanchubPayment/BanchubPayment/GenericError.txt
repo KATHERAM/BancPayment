@@ -1,0 +1,147 @@
+10092019 04:33:36-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+10092019 04:37:00-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+01072020 03:57:39-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+01072020 04:42:39-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+02072020 03:31:07-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03072020 03:24:18-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03072020 06:30:55-PaymentProcess-DebitPayment-There was no endpoint listening at https://sandbox.banchub.io/Banchubsandbox/service/soap that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+07072020 06:45:51-PaymentProcess-DebitPayment-The request channel timed out while waiting for a reply after 00:01:00. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout.
+07072020 06:50:29-PaymentProcess-CreditPayment-An error occurred while receiving the HTTP response to https://sandbox.banchub.io/Banchubsandbox/service/soap. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+07072020 06:56:51-PaymentProcess-CreditPayment-An error occurred while receiving the HTTP response to https://sandbox.banchub.io/Banchubsandbox/service/soap. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+07072020 06:57:41-PaymentProcess-CreditPayment-An error occurred while receiving the HTTP response to https://sandbox.banchub.io/Banchubsandbox/service/soap. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+07072020 07:45:00-PaymentProcess-CreditPayment-The underlying connection was closed: A connection that was expected to be kept alive was closed by the server.
+05082020 10:46:51-PaymentProcess-CreditPayment-Invalid length for a Base-64 char array or string.
+05082020 10:51:42-PaymentProcess-CreditPayment-Invalid length for a Base-64 char array or string.
+05082020 11:19:13-PaymentProcess-CreditPayment-Invalid length for a Base-64 char array or string.
+05082020 11:19:21-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+06082020 11:25:06-PaymentProcess-CreditPayment-Invalid length for a Base-64 char array or string.
+10082020 11:16:52-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+11082020 08:12:19-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+25082020 03:36:02-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+25082020 03:36:53-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+25082020 06:49:29-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+28082020 11:56:51-PaymentProcess-CreditPayment-Specified key is not a valid size for this algorithm.
+01092020 12:53:26-PaymentProcess-CreditPayment-Specified key is not a valid size for this algorithm.
+02092020 08:05:02-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+02092020 08:07:18-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+02092020 11:17:35-PaymentProcess-CreditPayment-The request channel timed out while waiting for a reply after 00:00:59.9940153. Increase the timeout value passed to the call to Request or increase the SendTimeout value on the Binding. The time allotted to this operation may have been a portion of a longer timeout.
+03092020 04:06:51-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 05:11:23-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 05:14:23-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 05:18:08-PaymentProcess-CreditPayment-There was no endpoint listening at https://sandbox.banchub.io/Banchubsandbox/service/soap that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+03092020 05:40:31-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 06:41:59-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 08:33:01-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+03092020 08:47:40-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+09092020 05:32:46-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+09092020 09:46:00-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+23092020 12:04:51-PaymentProcess-Email-CreditPayment-Could not find file 'D:\svn\BancHUB\Trunk\BanchubPayment221\BanchubPayment2.2.1\BanchubPayment\BanchubPayment\Email_Templet\testpayment-invoice.pdf'.
+23092020 12:04:53-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - sha@sdvjh.com::Reason -ExpectationFailed
+23092020 12:18:09-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - ashvj@sjhcv.com::Reason -ExpectationFailed
+23092020 12:19:38-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - asdh@asdjh.com::Reason -ExpectationFailed
+24092020 05:35:49-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krisha - asgj@shj.com::Reason -ExpectationFailed
+24092020 05:39:38-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - 243@ashg.com::Reason -ExpectationFailed
+25092020 09:55:05-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - krish@aajk.com::Reason -ExpectationFailed
+10102020 12:55:47-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+10102020 04:31:33-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - krish@zshj.com::Reason -ExpectationFailed
+10102020 04:33:03-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - asbv@sghwv.com::Reason -ExpectationFailed
+10102020 04:33:52-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - ahfj@asbjk.com::Reason -ExpectationFailed
+10102020 04:36:38-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - ask@qwjfhao.com::Reason -ExpectationFailed
+10102020 04:37:44-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishn - asfjb@fij.com::Reason -ExpectationFailed
+10102020 04:38:32-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - sda@efni.com::Reason -ExpectationFailed
+10102020 04:39:42-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - kjaf@fsg.com::Reason -ExpectationFailed
+10102020 04:41:58-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - wfahj@qsjghk.com::Reason -ExpectationFailed
+10102020 05:11:06-PaymentProcess-AchPayment-Index was outside the bounds of the array.
+10102020 05:12:04-PaymentProcess-AchPayment-Index was outside the bounds of the array.
+10102020 05:14:53-PaymentProcess-AchPayment-Index was outside the bounds of the array.
+10102020 05:29:07-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+10102020 05:33:30-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - asdhj@jfam.com::Reason -ExpectationFailed
+10102020 05:35:56-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - wwbaj@abksj.com::Reason -ExpectationFailed
+10102020 05:53:35-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishn - sanjk@asvha.com::Reason -ExpectationFailed
+10102020 05:57:46-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - sfdaj@asjhk.com::Reason -ExpectationFailed
+13102020 03:04:20-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+13102020 03:17:40-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+13102020 03:27:13-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+13102020 03:51:24-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 07:08:19-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 07:12:38-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 09:22:37-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 09:46:44-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 09:59:20-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+21102020 10:10:07-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27102020 08:34:24-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+28102020 05:38:36-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - ashj@sdhg.com::Reason -ExpectationFailed
+28102020 11:28:16-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 12:38:49-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 12:42:39-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 01:01:58-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 01:20:03-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 01:22:25-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 01:28:38-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 01:45:06-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 02:59:19-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:07:49-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:10:06-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:11:31-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:12:19-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:15:14-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 03:24:39-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 04:51:09-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 04:51:52-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 04:53:48-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 04:54:42-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:01:37-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:02:55-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:05:07-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:07:41-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:08:29-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:10:05-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+29102020 05:14:03-PaymentProcess-CreditPayment-Unable to cast object of type 'System.Collections.Generic.Dictionary`2[System.String,System.Object]' to type 'BancHubPayment.Models.AuthenticateModel'.
+29102020 10:01:48-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - xxx@xxx.xxx::Reason -ExpectationFailed
+29102020 10:19:13-PaymentProcess-CreditPayment-Value cannot be null.
+Parameter name: s
+29102020 11:13:14-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - xxx@xxx.xxx::Reason -ExpectationFailed
+29102020 11:17:52-PaymentProcess-CreditPayment-Fail to deliver the notifcation to krishna - xxx@xxx.xxx::Reason -ExpectationFailed
+16022021 08:15:41-Authenticate-Index-1
+16022021 08:17:17-Authenticate-Index-1
+16022021 08:17:58-Authenticate-Index-2
+16022021 08:17:58-Authenticate-Index-3dGVzdHBheW1lbnQ=
+16022021 08:17:58-Authenticate-Index-4=Qnbl1WehBHdzVGd
+16022021 08:17:58-Authenticate-Index-5ClientId=testpayment&Apikey=LvfXOTF9mPYZBK/f7eMH3vnNf04tD1rBQ2AfeFv7P/qSDOUGyUT2eC81wvK0x+U2ARnoqP4qPc3DyM9JzSBlbB4cTuABh5rn9o9dCkvsLwRmnKcS6Wsa8JTVlC6GlqgKNKybb7iZ1J8xxp5FxRlwP1Z+JzcgBy2PupqzhgLEK5E=&ReferenceId=1234&Amount=100&Currency=USD&Url=https://sandbox.banchub.io/Banchubpay/PaymentResult.html&Refund=False&AchType=PPD&DefaultMethod=CC&PaymentOptions=CC|DC|BAC&Email=False&Description=test&AutoSave=False&AuthorizeOnly=False
+16022021 08:17:58-Authenticate-Index-6
+17022021 01:45:59-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+17022021 01:46:33-PaymentProcess-CreditPayment-Unable to cast object of type 'BancHubPayment.Models.Authenticate' to type 'BancHubPayment.Models.AuthenticateModel'.
+19042021 04:02:33-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+19042021 09:36:25-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 08:53:23-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 08:58:36-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 09:15:06-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 11:23:13-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 06:25:10-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+22042021 11:50:52-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+24042021 03:01:10-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+24042021 09:56:13-PaymentProcess-AmazonPay-Value cannot be null.
+Parameter name: String
+24042021 09:58:15-PaymentProcess-AmazonPay-Value cannot be null.
+Parameter name: String
+24042021 09:59:45-PaymentProcess-AmazonPay-Value cannot be null.
+Parameter name: String
+24042021 10:26:01-PaymentProcess-AmazonPay-Value cannot be null.
+Parameter name: String
+25042021 10:17:54-PaymentProcess-AmazonPay-Unable to connect to the remote server
+25042021 11:13:53-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 11:18:31-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 11:30:09-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 11:32:27-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 11:40:02-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 11:54:45-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+25042021 12:00:16-PaymentProcess-AmazonPay-Object reference not set to an instance of an object.
+26042021 12:20:46-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+26042021 04:24:27-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+26042021 04:27:24-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 11:48:53-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 12:16:10-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 02:34:36-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 02:41:29-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 02:44:05-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.
+27042021 02:51:40-PaymentProcess-CreditPayment-Object reference not set to an instance of an object.

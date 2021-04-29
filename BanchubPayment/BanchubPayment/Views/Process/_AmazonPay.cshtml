@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "_AmazonPay";
+}
+
+
+    <body>
+
+        <div id="AmazonPayButton" style="text-align:center;margin-top:50px;"></div>
+
+        @*<button type="button" name="button" id="Logout" style="text-align:center">Logout</button>*@
+        <iframe id="AddressAndWallet" name="AddressAndWallet" style="width:100%;height:400px;" scrolling="no" src="" frameBorder="0" hidden="hidden">
+        </iframe>
+        <div id="details">
+
+        </div>
+        @using (Html.BeginForm("AmazonPayWallet", "Process", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "WalletForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 cols-xs-6">
+                    <input type="hidden" name="hid2" id="token" value="" />
+                    <input type="hidden" name="hid1" value=@ViewBag.info />
+                </div>
+            </div>
+
+               @*@{
+                   Html.RenderPartial("_AmazonPayWallet.cshtml");
+               }*@
+
+        }
+    </body>
+
+
+<script async='async' type='text/javascript'
+        src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'>
+</script>
+
+
+<script>
+
+    window.onAmazonLoginReady = function () {
+
+        amazon.Login.setClientId("@System.Configuration.ConfigurationManager.AppSettings["ClientId"].ToString()");
+
+    };
+    window.onAmazonPaymentsReady = function () {
+        showButton();
+    };
+    function showButton() {
+        var authRequest;
+        OffAmazonPayments.Button("AmazonPayButton","@System.Configuration.ConfigurationManager.AppSettings["merchant_id"].ToString()", {
+           type: "@System.Configuration.ConfigurationManager.AppSettings["Type"].ToString()",
+           color: "@System.Configuration.ConfigurationManager.AppSettings["color"].ToString()",
+           size: "@System.Configuration.ConfigurationManager.AppSettings["size"].ToString()",
+
+            authorization: function () {
+              
+                loginOptions = { scope:"@System.Configuration.ConfigurationManager.AppSettings["scope"].ToString()", popup: true };
+                authRequest = amazon.Login.authorize(loginOptions, function (response) {
+                    if (response.error ) {
+                      
+                    }
+                    else {
+                        debugger;
+                        $("#AmazonPayButton").addClass("hidden");
+                        $('#token').attr('value', response.access_token);
+                        $("#WalletForm").submit();
+                        $("#AddressAndWallet").removeAttr("hidden");
+                    }
+                });
+            },
+            onError: function (error) {
+            }
+        });
+    }
+
+</script>

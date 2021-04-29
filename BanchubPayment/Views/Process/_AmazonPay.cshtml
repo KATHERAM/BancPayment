@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "_AmazonPay";
+}
+
+
+
+
+    <body>
+
+        <div id="AmazonPayButton" style="text-align:center;margin-top:50px;"></div>
+        <form id="wallet">
+            <div class="walletdetails">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 cols-xs-6">
+                        <input type="hidden" name="hid2" id="token" value="" />
+                        <input type="hidden" name="hid1" id="info" value=@ViewBag.info />
+                        
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </body>
+
+
+
+
+
+<script async='async' type='text/javascript'
+        src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'>
+</script>
+
+
+<script>
+
+    window.onAmazonLoginReady = function () {
+
+        amazon.Login.setClientId("@System.Configuration.ConfigurationManager.AppSettings["ClientId"].ToString()");
+
+    };
+    window.onAmazonPaymentsReady = function () {
+        showButton();
+    };
+    function showButton() {
+        var authRequest;
+        OffAmazonPayments.Button("AmazonPayButton","@System.Configuration.ConfigurationManager.AppSettings["merchant_id"].ToString()", {
+           type: "@System.Configuration.ConfigurationManager.AppSettings["Type"].ToString()",
+           color: "@System.Configuration.ConfigurationManager.AppSettings["color"].ToString()",
+           size: "@System.Configuration.ConfigurationManager.AppSettings["size"].ToString()",
+
+            authorization: function () {
+
+                loginOptions = { scope:"@System.Configuration.ConfigurationManager.AppSettings["scope"].ToString()", popup: true };
+                authRequest = amazon.Login.authorize(loginOptions, function (response) {
+                    if (response.error ) {
+
+                    }
+                    else {
+
+                        $("#AmazonPayButton").addClass("hidden");
+                        $('#token').attr('value', response.access_token);
+
+
+
+                        var wallet = $("#wallet").serialize();
+                       
+                        $.ajax({
+                            type: "POST",
+                            url: "@System.Configuration.ConfigurationManager.AppSettings["returnUrl"].ToString()",
+                            dataType: "html",
+                            data: wallet,
+                            success: function (data) {
+
+                                if (data != null) {
+                                    $('.walletdetails').html(data);
+                                }
+                            }
+                        });
+                        $("#AddressAndWallet").removeAttr("hidden");
+                    }
+                });
+            },
+            onError: function (error) {
+            }
+        });
+    }
+
+</script>

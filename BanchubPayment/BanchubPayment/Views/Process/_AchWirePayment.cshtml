@@ -1,0 +1,90 @@
+﻿@model BancHubPayment.Models.AchWireModel
+@using (Html.BeginForm("AchWirePayment", "Process", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "wireForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div id="main-content-bankTransfer" class="container-fluid">
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+                <span style="color:orangered">*</span>@Html.LabelFor(model => model.WireAccountName, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                @Html.TextBoxFor(model => model.WireAccountName, new { @class = "form-control", @maxlength = "30" })
+            </div>
+            <div class="col-sm-1 cols-md-1"></div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+                <span style="color:orangered">*</span>@Html.LabelFor(model => model.WireAccountNumber, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-4 col-sm-12 cols-xs-6">
+                @Html.TextBoxFor(model => model.WireAccountNumber, new { @class = "form-control", @maxlength = "17" })
+            </div>
+            <div class="col-md-2 col-sm-12 cols-xs-6 align">
+                <span style="color:orangered">*</span>@Html.LabelFor(model => model.WireAccountType, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                @Html.DropDownListFor(model => model.WireAccountType, Model.Type, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+                <span style="color:orangered">*</span>@Html.LabelFor(model => model.WireRoutingNumber, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                @Html.TextBoxFor(model => model.WireRoutingNumber, new { @class = "form-control", @maxlength = "9" })
+            </div>
+        </div>
+        @*<div class="row paddingtext">
+                <div class="col-md-3 col-sm-12 cols-xs-6 align">
+                    <span style="color:orangered">*</span>@Html.LabelFor(model => model.WireZipCode, htmlAttributes: new { @class = "form-label-bold" })
+                </div>
+                <div class="col-md-3 col-sm-12 cols-xs-6">
+                    @Html.TextBoxFor(model => model.WireZipCode, new { @class = "form-control", @maxlength = "6" })
+                </div>
+                <div class="col-md-6 col-sm-12 cols-xs-6">
+                </div>
+            </div>*@
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                @if (!ViewData.ModelState.IsValid && (ViewBag.requestType != null && ViewBag.requestType == "Ach"))
+                {
+                    <div class="alert alert-danger fade in">
+                        <a href="#" class="close" data-dismiss="alert" tabindex="-1">&times;</a>
+                        @Html.ValidationSummary(false, null, new { @class = "text-danger" })
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <input value="Pay »" type="button" id="achWire" class='form-control btn btn-primary submit-button' />
+            </div>
+            <div class="col-md-6 col-sm-12 cols-xs-6">
+            </div>
+        </div>
+        <br />
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6 align">
+            </div>
+            <div class="col-md-8 col-sm-12 cols-xs-6" style="vertical-align: middle;">
+                <img src="~/images/production.png" style="height: 25px; width: 25px;" />
+                <span style="font-size: 1em;">&nbsp;TrustPay:100% Payment Protection.</span>
+            </div>
+            <div class="col-md-1 col-sm-12 cols-xs-6"></div>
+        </div>
+        @{
+            var svalue = Guid.NewGuid();
+        }
+        <input type="hidden" id="tempwvalue" name="hid3" value=@svalue />
+        @Html.HiddenFor(model => model.WireZipCode, new { Value = "12345" })
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/JS/bootstrap/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/aes.js"></script>*@
+
+}

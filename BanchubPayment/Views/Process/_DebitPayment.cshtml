@@ -1,0 +1,180 @@
+﻿@model BancHubPayment.Models.DebitCardModel
+@using (Html.BeginForm("DebitPayment", "Process", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "debitForm" }))
+{
+    @Html.AntiForgeryToken()
+    <div id="main-content" class="container-fluid">
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                Accepted cards
+                <img src="@Url.Content("~/images/imgcard/card_visa.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/master_card.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/maestro_card.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/amex_card.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/discover_network_card.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/jcb_card.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/dinner_club.png")" alt="IMAGES" />
+                <img src="@Url.Content("~/images/imgcard/unionpay-card.png")" alt="IMAGES" />
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <span style="color:orangered">*&nbsp;</span>@Html.LabelFor(model => model.DebitCardHolderName, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                @Html.TextBoxFor(model => model.DebitCardHolderName, new { @class = "form-control", @maxlength = "50", autocomplete = "off" })
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <span style="color:orangered">*&nbsp;</span>@Html.LabelFor(model => model.DebitCardNumber, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                <div class="input-group">
+                    @Html.TextBoxFor(model => model.DebitCardNumber, new { @class = "form-control", @maxlength = "22", autocomplete = "off" })
+                    <div class="input-group-btn">
+                        <div class="btn btn-default" id="cardimg1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <span style="color:orangered">*&nbsp;</span>
+                <label for="Expiry" class="form-label-bold">Expiration date</label>
+                <!--@Html.LabelFor(model => model.DebitExpiryMonth, htmlAttributes: new { @class = "form-label-bold" })-->
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                @Html.DropDownListFor(model => model.DebitExpiryMonth, Model.Months, new { @class = "form-control" })
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                @Html.DropDownListFor(model => model.DebitExpiryYear, Model.Years, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <span style="color:orangered;">*&nbsp;</span>
+                @Html.LabelFor(model => model.DebitCvv, htmlAttributes: new { @class = "form-label-bold" })
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <div class="input-group">
+                    @Html.PasswordFor(model => model.DebitCvv, new { @class = "form-control", @maxlength = "4", autocomplete = "off" })
+                    <span class="input-group-btn">
+                        <a tabindex="0" class="btn btn-default" role="button" data-toggle="popover" data-trigger="focus" title="What is CVV?" data-placement="left"
+                           data-content="<div class='media'><img src='../images/imgcard/cvv2.png' tabindex='-1' class='media-object' alt='What is CVV? 3 digits on back of the card or 4 digits on front of the card for Amex.'></div>"><i class="fa fa-question-circle fa-lg"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        @*<div class="row paddingtext">
+                <div class="col-md-3 col-sm-12 cols-xs-6">
+                    <span style="color:orangered">*&nbsp;</span>@Html.LabelFor(model => model.DebitZipCode, htmlAttributes: new { @class = "form-label-bold" })
+                </div>
+                <div class="col-md-3 col-sm-12 cols-xs-6">
+                    @Html.TextBoxFor(model => model.DebitZipCode, new { @class = "form-control", @maxlength = "6", autocomplete = "off" })
+                </div>
+                <div class="col-md-6 col-sm-12 cols-xs-6">
+                </div>
+            </div>*@
+
+        @Html.HiddenFor(model => model.EmailId, new { Value = "xxx@xxx.xxx" })
+        @Html.HiddenFor(model => model.PhoneCode, new { Value = "+1" })
+        @Html.HiddenFor(model => model.Phone, new { Value = "1234567890" })
+
+
+        <div class="row paddingtext">
+            <div class="col-md-12 col-sm-12 cols-xs-6">
+                @if ((bool)TempData["autosave"] != true)
+                {
+                    @Html.CheckBoxFor(model => model.SaveAccount)<span class="form-label-bold">&nbsp;Save my account details</span>
+                    <div style="font-size:x-small">
+                        <i class="fa fa-lock fa-lg"></i>This card will be securely saved for a faster payment experience and renewal payments. CVV number will not be saved.We only save your card number and expiry date. Be assured, your card details are 100% safe.We use world class encryption for storing card details with PCI DSS security.
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+            </div>
+            <div class="col-md-9 col-sm-12 cols-xs-6">
+                @if (!ViewData.ModelState.IsValid && (ViewBag.requestType != null && ViewBag.requestType == "Debit"))
+                {
+                    <div class="alert alert-danger fade in">
+                        <a href="#" class="close" data-dismiss="alert" tabindex="-1">&times;</a>
+                        @Html.ValidationSummary(false, null, new { @class = "text-danger" })
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+            </div>
+            @if ((bool)TempData["AuthorizeOnly"] != true)
+            {
+                <div class="col-md-3 col-sm-12 cols-xs-6">
+                    @*<input value="Pay »" type="button" id="debit" class='form-control btn btn-primary submit-button' />*@
+                    <button type="button" class="form-control btn btn-primary submit-button" id="debit" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Pay »">
+                        Pay »
+                    </button>
+                    &nbsp;&nbsp;
+                </div>
+            }
+            else
+            {
+                <div class="col-md-3 col-sm-12 cols-xs-6">
+                    @*<input value="Pay »" type="button" id="debit" class='form-control btn btn-primary submit-button' />*@
+                    <button type="button" class="form-control btn btn-primary submit-button" id="debit" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Authorize »">
+                        Authorize »
+                    </button>
+                    &nbsp;&nbsp;
+                </div>
+            }
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <input value="Cancel" type="button" id="debitcancel" class='form-control btn btn-primary submit-button' onclick="location.href='@Url.Action("Cancel","Process",new {info = @ViewBag.info})'" />
+            </div>
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+                <span id="resultcredit"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row paddingtext">
+            <div class="col-md-3 col-sm-12 cols-xs-6">
+            </div>
+            <div class="col-md-8 col-sm-12 cols-xs-6" style="vertical-align: middle;">
+                <img src="~/images/production.png" style="height: 25px; width: 25px;" />
+                <span style="font-size: 1em;">&nbsp;TrustPay:100% Payment Protection.</span>
+            </div>
+            <div class="col-md-1 col-sm-12 cols-xs-6"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 cols-xs-6">
+                <input type="hidden" name="hid1" value=@ViewBag.info />
+                <input type="hidden" name="hid2" value=@ViewBag.token />
+                @{
+                    var svalue = Guid.NewGuid();
+                }
+                <input type="hidden" id="tempddvalue" name="hid3" value=@svalue />
+                @Html.HiddenFor(model => model.DebitZipCode, new { Value = "12345" })
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/JS/bootstrap/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/aes.js"></script>*@
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+    </script>
+    @*<script type="text/javascript">
+            $('[data-toggle="popover"]').popover({
+                placement: 'top',
+                trigger: 'hover',
+                html: true,
+                content: '<div class="media"><a href="#" ><img src="../images/imgcard/cvv2.png" tabindex="-1" class="media-object" alt="What is CVV? 3 digits on back of the card or 4 digits on front of the card for Amex."></a></div>'
+            });
+        </script>*@
+}

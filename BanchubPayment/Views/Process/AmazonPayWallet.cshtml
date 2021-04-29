@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "AmazonPayWallet";
+}
+
+@*<style>
+
+
+
+         #addressBookWidgetDiv {
+             float: left;
+             width: 49% !important;
+             height: 136% !important;
+         }
+         #walletWidgetDiv {
+             width: 49% !important;
+             height: 136% !important;
+             float: right;
+         }
+
+
+
+     #error {
+         color: firebrick;
+     }
+
+
+
+    #AmazonPay {
+    width: max-content;
+    padding:0px 50px
+    }
+     #AmazonPaycancel {
+     width: max-content;
+     padding: 0px 50px
+    }
+     .AmazonButton {
+     float: left;
+     margin-top: 10px !important;
+      margin-left: 25%;
+    }
+     .Amazoncancel {
+      float: right;
+      margin-top: 10px !important;
+      margin-right: 24% !important;
+    }
+
+     </style>*@
+
+@*<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    </head>
+    <body>*@
+
+    @Html.Partial("_AmazonPayWallet")
+
+
+@*@using (Html.BeginForm("AmazonPay", "Process", FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "AmazonPayForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" id="address_consent_token" value="" />
+        <input type="hidden" name="hid2" id="orderid" value="" />
+        <input type="hidden" name="hid1" value=@ViewBag.info />
+        <div class="container">
+
+            <div class="form-group">
+                <div class="Wallet_address" style="padding-top: 25px;height:50% !important" id="api-content">
+
+                    <div id="section-content">
+
+                        <div class="row paddingtext">
+                            <div class="col-md-3 col-sm-12 cols-xs-6">
+                                <div id="addressBookWidgetDiv" style="width: 400px; height: 240px; display: inline-block;"></div>
+                            </div>
+                            <div class="col-md-9 col-sm-12 cols-xs-6">
+                                <div id="walletWidgetDiv" style="width: 400px; height: 240px;display: inline-block;"></div>
+                            </div>
+                        </div>
+                        <div class="row paddingtext">
+
+                            @if ((bool)TempData["AuthorizeOnly"] != true)
+                            {
+                                <div class="col-md-3 col-sm-3 cols-xs-3 AmazonButton">
+                                    <input value="Pay »" type="button" id="debit" class='form-control btn btn-primary submit-button' />
+                                    <button type="button" class="form-control btn btn-primary submit-button" id="AmazonPay" name="PayAuth" value="Pay" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Pay »">
+                                        Pay »
+                                    </button>
+                                    &nbsp;&nbsp;
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-3 col-sm-3 cols-xs-3 AmazonButton">
+                                    <input value="Pay »" type="button" id="debit" class='form-control btn btn-primary submit-button' />
+                                    <button type="button" class="form-control btn btn-primary submit-button" id="AmazonPay" name="PayAuth" value="Authorize" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Authorize »">
+                                        Authorize »
+                                    </button>
+                                    &nbsp;&nbsp;
+                                </div>
+                            }
+                            <div class="col-md-3 col-sm-3 cols-xs-3 Amazoncancel">
+                                <input value="Cancel" type="button" id="AmazonPaycancel" class='form-control btn btn-primary submit-button' onclick="location.href='@Url.Action("Cancel", "Process", new { info = @ViewBag.info })'" />
+                            </div>
+
+                        </div>
+                        <script src="~/Scripts/jquery-3.4.1.js"></script>
+                        <script type='text/javascript' src='https://static-na.payments-amazon.com/OffAmazonPayments/us/sandbox/js/Widgets.js'></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha384-qlmct0AOBiA2VPZkMY3+2WqkHtIQ9lSdAsAn5RUJD/3vA5MKDgSGcdmIv4ycVxyn" crossorigin="anonymous"></script>
+                        <script type="text/javascript">
+
+
+    var oro = "";
+    new OffAmazonPayments.Widgets.AddressBook({
+    sellerId:'@System.Configuration.ConfigurationManager.AppSettings["merchant_id"].ToString()',
+    onOrderReferenceCreate: function (orderReference) {
+
+                           oro = orderReference.getAmazonOrderReferenceId();
+
+                           $('#orderid').attr('value', oro);
+      },
+        onAddressSelect: function (orderReference) {
+
+
+        },
+        design: {
+
+            designMode: 'responsive'
+
+    },
+    onError: function (error) {
+
+    }
+    }).bind("addressBookWidgetDiv");
+
+    var WalletDetails = new OffAmazonPayments.Widgets.Wallet({
+    sellerId: '@System.Configuration.ConfigurationManager.AppSettings["merchant_id"].ToString()',
+    onPaymentSelect: function (orderReference) {
+
+    },
+        design: {
+
+            designMode: 'responsive'
+
+    },
+    onError: function (error) {
+
+    // your error handling code
+    }
+    }).bind("walletWidgetDiv");
+
+
+
+                            $("#AmazonPay").on('click', function () {
+                                debugger;
+                                $('#AmazonPaycancel').prop('disabled', true);
+
+                                var $this = $('#AmazonPay');
+                                $this.button('loading');
+
+                                //select and serialize our small form
+                                var frm = $("#AmazonPayForm").serialize()
+                                    + '&'
+                                    + this.name
+                                    + '='
+                                    + this.value
+                                    ;
+
+                                // get form action
+                                var action = $("#AmazonPayForm").attr("action");
+
+                                try {
+                                    $.ajax({
+                                        url: action,
+                                        cache: false,
+                                        async: true,
+                                        type: "POST",
+                                        data: frm, //data to post to server
+                                        timeout: 120000,
+                                        error: function (jqXHR, exception) {
+                                            debugger;
+                                            if (jqXHR.status === 0) {
+                                                alert('Network not available. You will receive status notification for the requested payment.');
+                                            } else if (jqXHR.status == 404) {
+                                                alert('Requested page not found. [404]');
+                                            } else if (jqXHR.status == 500) {
+                                                alert('Internal Server Error [500].  You will receive status notification for the requested payment.');
+                                            } else if (exception === 'parsererror') {
+                                                alert('Requested JSON parse failed.');
+                                            } else if (exception === 'timeout') {
+                                                alert('Time out due to network issue. You will receive status notification for the requested payment.');
+                                            } else if (exception === 'abort') {
+                                                alert('Request aborted.');
+                                            } else {
+                                                alert('Uncaught Error.n' + jqXHR.responseText);
+                                            }
+
+                                            $('#AmazonPaycancel').prop('disabled', false);
+                                            $this.button('reset');
+
+                                            //InvokePop();
+                                            //ShowLess();
+                                        },
+                                        success: function (res) {
+
+                                            if (res.redirectUrl != null) {
+
+                                                var url = res.redirectUrl;
+
+
+                                                $("#AddressAndWallet").attr("hidden");
+                                                $("#addressBookWidgetDiv").empty();
+                                                $("#walletWidgetDiv").empty();
+                                                $("#PaymentStatus").removeAttr("hidden");
+                                                $("#AmazonPay").addClass("hidden");
+                                                $("#AmazonPaycancel").addClass("Hidden");
+
+
+                                                $('#ConfirmOrder').append($("#PaymentStatus"));
+
+                                                amazon.Login.logout();
+
+                                                window.top.location.href = url;
+                                            }
+
+
+                                        }
+                                    });
+                                }
+                                catch (e) {
+
+                                }
+                            });
+                        </script>
+
+
+                    </div>
+                        </div>
+
+
+            </div>
+        </div>
+
+    }*@
+
+</body>
+</html>

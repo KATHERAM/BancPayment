@@ -1,0 +1,100 @@
+﻿@model BancHubPayment.Models.StatusModel
+@{
+    ViewBag.Title = "Payment Status";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section featured
+{
+    <div id="content">
+        <div class="box box-bordered box-color">
+            <div class="box-title">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 cols-xs-6">
+                        <h3>
+                            <i class="fa fa-money"></i>Payment Status</h3>
+                    </div>
+                    <div class="col-md-3 col-sm-12 cols-xs-6">
+                    </div>
+                    <div class="col-md-3 col-sm-12 cols-xs-6" style="margin-top: 5px;">
+                    </div>
+                    <div class="col-md-3 col-sm-12 cols-xs-6" style="margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+            <div class="box-content nopadding">
+                <div style="background-color:#b9eed5">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                            <br />
+                            <div style="text-align:center">
+                                <img src="~/images/tick_green.png" style="width:35px;height:35px"  />
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                             <div style="text-align:center">
+                            <strong>Your transaction status - @TempData["status"].ToString()</strong>
+                                 </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                             <div style="text-align:center">
+                            <strong>Your transaction reference Id - @TempData["tranid"].ToString() </strong>
+                                 </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                        <div class="col-md-6 col-sm-12 cols-xs-6">
+                             <div style="text-align:center">
+                            <strong> @TempData["remarks"].ToString() </strong>
+                                 </div>
+                            <br />
+                            <br />
+                        </div>
+                        <div class="col-md-3 col-sm-12 cols-xs-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-sm-12 cols-xs-6"></div>
+            <div class="col-md-1 col-sm-12 cols-xs-6">
+                <div>
+                <img src="~/images/banchub.png" style="width:100px;" />
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12 cols-xs-6">
+                <div style="padding-left:30px;font-size:smaller !important">
+                This is a secure payment gateway using SSL encryption. <br />
+                    Powered by BancHUB.io - Payment Service Provider
+                    
+                    </div>
+            </div>
+            <div class="col-md-4 col-sm-12 cols-xs-6">
+                <div style="text-align:right" >
+                <img src="~/images/production.png" style="height: 15px; width: 15px;" />
+                <span style="font-size: 0.8em;">&nbsp;TrustPay:100% Payment Protection, Easy Returns Policy</span>
+                    </div>
+            </div>
+            <div class="col-md-1 col-sm-12 cols-xs-6"></div>
+        </div>
+    </div>
+}
